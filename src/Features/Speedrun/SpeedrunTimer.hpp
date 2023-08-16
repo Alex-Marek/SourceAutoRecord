@@ -4,6 +4,7 @@
 #include "Command.hpp"
 #include "Rules.hpp"
 #include "Variable.hpp"
+#include "Features/Stats/ConsistencyStats.hpp"
 
 #include <string>
 

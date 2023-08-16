@@ -658,6 +658,9 @@ void SpeedrunTimer::Split(bool newSplit, std::string segName, bool requested) {
 		setTimerAction(TimerAction::SPLIT);
 		float totalTime = SpeedrunTimer::GetTotalTicks() * *engine->interval_per_tick;
 		float splitTime = g_speedrun.splits.back().ticks * *engine->interval_per_tick;
+		if (sar_consistencystats_enable.GetBool()) {
+			consistencyStats->RecordData(segName, splitTime);
+		}
 		if (!sar_mtrigger_legacy.GetBool()) {
 			std::string text = Utils::ssprintf("%s\n%s (%s)", segName.c_str(), SpeedrunTimer::Format(totalTime).c_str(), SpeedrunTimer::Format(splitTime).c_str());
 			toastHud.AddToast(SPEEDRUN_TOAST_TAG, text);

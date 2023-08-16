@@ -17,6 +17,7 @@
 #include "Event.hpp"
 #include "Features.hpp"
 #include "Features/Stats/StatsCounter.hpp"
+#include "Features/Stats/ConsistencyStats.hpp"
 #include "Features/SeasonalASCII.hpp"
 #include "Game.hpp"
 #include "Hook.hpp"
@@ -73,6 +74,7 @@ bool SAR::Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerF
 			this->features->AddFeature<Teleporter>(&teleporter);
 			SpeedrunTimer::Init();
 			this->features->AddFeature<Stats>(&stats);
+			this->features->AddFeature<ConsistencyStats>(&consistencyStats);
 			this->features->AddFeature<StatsCounter>(&statsCounter);
 			this->features->AddFeature<Sync>(&synchro);
 			this->features->AddFeature<ReloadedFix>(&reloadedFix);

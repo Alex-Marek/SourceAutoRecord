@@ -493,6 +493,9 @@
     <ClCompile Include="Features\Tas\TasScript.cpp">
       <Filter>SourceAutoRecord\Features\Tas</Filter>
     </ClCompile>
+    <ClCompile Include="Features\Stats\ConsistencyStats.cpp">
+      <Filter>SourceAutoRecord\Features\Stats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\minhook\buffer.h">
@@ -1271,6 +1274,9 @@
     </ClInclude>
     <ClInclude Include="Features\Tas\TasScript.hpp">
       <Filter>SourceAutoRecord\Features\Tas</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Stats\ConsistencyStats.hpp">
+      <Filter>SourceAutoRecord\Features\Stats</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
