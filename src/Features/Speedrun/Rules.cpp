@@ -301,6 +301,8 @@ static const char *printRuleAction(RuleAction action) {
 		return "stop";
 	case RuleAction::SPLIT:
 		return "split";
+	case RuleAction::NONE:
+		return "none";
 	case RuleAction::PAUSE:
 		return "pause";
 	case RuleAction::RESUME:

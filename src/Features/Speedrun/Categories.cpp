@@ -99,7 +99,11 @@ static void dispatchRule(std::string name, SpeedrunRule *rule) {
 		break;
 
 	case RuleAction::SPLIT:
-		SpeedrunTimer::Split(true, name);
+		SpeedrunTimer::Split(true, name, true, true);
+		break;
+
+	case RuleAction::NONE:
+		SpeedrunTimer::Split(true, name, true, false);
 		break;
 
 	case RuleAction::PAUSE:
@@ -512,6 +516,8 @@ bool SpeedrunTimer::CreateRule(std::string name, std::string type, std::map<std:
 		action = RuleAction::STOP;
 	} else if (*actionStr == "split") {
 		action = RuleAction::SPLIT;
+	} else if (*actionStr == "none") {
+		action = RuleAction::NONE;
 	} else if (*actionStr == "pause") {
 		action = RuleAction::PAUSE;
 	} else if (*actionStr == "resume") {

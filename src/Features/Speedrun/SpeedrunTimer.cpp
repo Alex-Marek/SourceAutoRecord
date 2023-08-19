@@ -546,7 +546,7 @@ void SpeedrunTimer::Stop(std::string segName) {
 
 	statsCounter->IncrementRunFinished(total);
 
-	SpeedrunTimer::Split(true, segName, false);
+	SpeedrunTimer::Split(true, segName, false, true);
 
 	g_runs.push_back(g_activeRun);
 
@@ -619,7 +619,7 @@ bool replace(std::string &str, const std::string &from, const std::string &to) {
 	return true;
 }
 
-void SpeedrunTimer::Split(bool newSplit, std::string segName, bool requested) {
+void SpeedrunTimer::Split(bool newSplit, std::string segName, bool requested, bool trueSplit) {
 	if (!g_speedrun.isRunning) {
 		return;
 	}
@@ -655,7 +655,9 @@ void SpeedrunTimer::Split(bool newSplit, std::string segName, bool requested) {
 	}
 
 	if (newSplit) {
-		setTimerAction(TimerAction::SPLIT);
+		if (trueSplit) {
+			setTimerAction(TimerAction::SPLIT);
+		}
 		float totalTime = SpeedrunTimer::GetTotalTicks() * *engine->interval_per_tick;
 		float splitTime = g_speedrun.splits.back().ticks * *engine->interval_per_tick;
 		if (sar_consistencystats_enable.GetBool()) {

@@ -13,6 +13,7 @@ enum class RuleAction {
 	FORCE_START,  // Restart timer if already running
 	STOP,
 	SPLIT,
+	NONE,
 	PAUSE,
 	RESUME,
 };

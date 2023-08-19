@@ -30,7 +30,7 @@ namespace SpeedrunTimer {
 	void Pause();
 	void Resume();
 	void Stop(std::string segName);
-	void Split(bool newSplit, std::string segName, bool requested = true);
+	void Split(bool newSplit, std::string segName, bool requested = true, bool trueSplit = true);
 	void Reset(bool requested = true);
 
 	bool IsRunning();
